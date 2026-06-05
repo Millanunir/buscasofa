@@ -1,8 +1,8 @@
 export const TEAM_NUMBER = 10;
 
 export const TEAM_MEMBERS = [
-  { name: 'Millan Madrid Sacristán', contribution: 'coordinación y desarrollo del frontend' },
-  { name: 'Alberto Gimenez Torres', contribution: 'desarrollo del mapa y la lista de estaciones' },
-  { name: 'Edgar Arbones Chaparro', contribution: 'backend de comentarios y despliegue' },
-  { name: 'Rafael Morales Rodriguez', contribution: 'pruebas con Cypress y documentación' },
+  { name: 'Millan Madrid Sacristán', contribution: 'desarrollo de la aplicación, pruebas y documentación' },
+  { name: 'Alberto Gimenez Torres', contribution: 'miembro del equipo' },
+  { name: 'Edgar Arbones Chaparro', contribution: 'documentación' },
+  { name: 'Rafael Morales Rodriguez', contribution: 'miembro del equipo' },
 ];

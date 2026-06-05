@@ -40,9 +40,16 @@ function Comments({ stationId, user }) {
 
   const renderStars = value => '★'.repeat(value) + '☆'.repeat(5 - value);
 
+  const media = comments.length
+    ? (comments.reduce((s, c) => s + (c.rating || 0), 0) / comments.length).toFixed(1)
+    : null;
+
   return (
     <div className="comments-section">
       <h3>Comentarios de los usuarios</h3>
+      <p className="valoracion-media">
+        {media !== null ? `Valoración media: ${media} / 5` : 'Sin valoraciones'}
+      </p>
       {
         !user && (
           <p>Inicia sesión para dejar un comentario.</p>

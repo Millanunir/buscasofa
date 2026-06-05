@@ -1,0 +1,11 @@
+.loading {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text);
+}
+
+.error {
+  padding: 2rem;
+  text-align: center;
+  color: var(--danger);
+}

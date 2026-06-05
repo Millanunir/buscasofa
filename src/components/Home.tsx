@@ -58,6 +58,30 @@ const Home = ({ stations }) => {
         El mejor buscador de precios de combustible de España.
       </div>
 
+      <h2>Precios de combustibles</h2>
+      <table className="fuel-prices">
+        <thead>
+          <tr>
+            <th>Gasolinera</th>
+            <th>Dirección</th>
+            <th>Municipio</th>
+            <th>Gasóleo A</th>
+            <th>Gasolina 95 E5</th>
+          </tr>
+        </thead>
+        <tbody>
+          {stations.map((station, idx) => (
+            <tr key={station.IDEESS || idx}>
+              <td>{station['Rótulo']}</td>
+              <td>{station['Dirección']}</td>
+              <td>{station['Municipio']}</td>
+              <td>{station['Precio Gasoleo A']}</td>
+              <td>{station['Precio Gasolina 95 E5']}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
       <h2 className='resumen-nacional'>Resumen nacional de precios</h2>
       <table className='resumen-nacional'>
         <thead>

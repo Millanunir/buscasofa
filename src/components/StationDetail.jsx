@@ -7,8 +7,7 @@ import './Form.css'
 
 function StationDetail({ stations, user }) {
   const location = useLocation();
-  // console.log(location);
-  const {gobackLink} = location.state;
+  const gobackLink = location.state?.gobackLink ?? '/lista';
 
   const { id } = useParams();
   // Buscamos la estación por su ID:
@@ -22,6 +21,11 @@ function StationDetail({ stations, user }) {
       <h2>{station['Rótulo']}</h2>
       <p><strong>Dirección:</strong> {station['Dirección']}</p>
       <p><strong>Municipio:</strong> {station['Municipio']}</p>
+      <p><strong>Provincia:</strong> {station['Provincia']}</p>
+      <p><strong>C.P.:</strong> {station['C.P.']}</p>
+      <p><strong>Horario:</strong> {station['Horario']}</p>
+      <p><strong>Tipo Venta:</strong> {station['Tipo Venta']}</p>
+      <p><strong>Margen:</strong> {station['Margen']}</p>
       <p><strong>Gasóleo A:</strong> {station['Precio Gasoleo A']}</p>
       <p><strong>Gasolina 95 E5:</strong> {station['Precio Gasolina 95 E5']}</p>
       

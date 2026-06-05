@@ -7,3 +7,44 @@
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(37, 69, 71, 0.12);
 }
+
+.about-container h1 {
+  margin-top: 0;
+}
+
+#info {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.about-team h2 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.team-members {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.team-member {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--surface-strong);
+}
+
+.team-member:last-child {
+  border-bottom: none;
+}
+
+.team-member-name {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.team-member-contribution {
+  display: block;
+  color: var(--dark);
+  opacity: 0.85;
+}

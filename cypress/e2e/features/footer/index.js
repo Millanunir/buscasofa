@@ -2,7 +2,7 @@
 import { Given, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 Given('el usuario navega a la home', () => {
-  cy.visit('/');
+  cy.visitWithFuelData('/');
 });
 
 Then('debería ver en el footer a {string}', (name) => {

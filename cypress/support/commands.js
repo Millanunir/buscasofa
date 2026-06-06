@@ -1,25 +1,18 @@
 // ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
+// Comandos personalizados para esperar la carga de la app
 // ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('waitForAppReady', () => {
+  cy.get('body').then(($body) => {
+    if ($body.find('.loading').length) {
+      cy.get('.loading', { timeout: 30000 }).should('not.exist');
+    }
+  });
+});
+
+Cypress.Commands.add('visitWithFuelData', (url = '/') => {
+  cy.intercept('GET', '**/EstacionesTerrestres/**', { fixture: 'fuel_data.json' }).as('getFuelPrices');
+  cy.visit(url);
+  cy.wait('@getFuelPrices');
+  cy.waitForAppReady();
+});

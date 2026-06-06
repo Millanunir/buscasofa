@@ -4,6 +4,9 @@ const { addCucumberPreprocessorPlugin } = require('@badeball/cypress-cucumber-pr
 const { createEsbuildPlugin } = require('@badeball/cypress-cucumber-preprocessor/esbuild');
 
 module.exports = defineConfig({
+  defaultCommandTimeout: 15000,
+  requestTimeout: 30000,
+  pageLoadTimeout: 60000,
   retries: {
     runMode: 2,
     openMode: 2,

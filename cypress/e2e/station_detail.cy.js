@@ -1,6 +1,5 @@
 describe('Detalle de estación con valoración media', () => {
   beforeEach(() => {
-    cy.intercept('GET', '**/EstacionesTerrestres/**', { fixture: 'fuel_data.json' }).as('getFuelPrices');
     cy.intercept('GET', '**/api/comments/4375', {
       body: [
         { username: 'test1', comment: 'Bien', rating: 4, created_at: '2025-01-01' },
@@ -10,8 +9,7 @@ describe('Detalle de estación con valoración media', () => {
   });
 
   it('muestra la valoración media y datos adicionales de la gasolinera', () => {
-    cy.visit('/station/4375');
-    cy.wait('@getFuelPrices');
+    cy.visitWithFuelData('/station/4375');
     cy.wait('@getComments');
 
     cy.get('.valoracion-media').should('contain', '3.0');

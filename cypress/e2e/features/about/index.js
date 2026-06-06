@@ -2,9 +2,7 @@
 import { Given, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 Given('el usuario navega a la pagina About', () => {
-  cy.intercept('GET', '**/EstacionesTerrestres/**', { fixture: 'fuel_data.json' }).as('getFuelPrices');
-  cy.visit('/about');
-  cy.wait('@getFuelPrices');
+  cy.visitWithFuelData('/about');
 });
 
 Then('debería ver el texto del numero de equipo', () => {
